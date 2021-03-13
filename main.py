@@ -1,4 +1,6 @@
 # mastrobot_example.py
+import time
+
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
@@ -20,6 +22,8 @@ def error(update, context):
 # function to handle normal text
 def text(update, context):
     text_received = update.message.text
+    time.sleep(5)
+
     update.message.reply_text(f'did you said "{text_received}" ?')
 
 
