@@ -1,4 +1,14 @@
-if __name__ == '__main__':
-    import run
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
 
-    print("hello world")
+
+def hello(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text(f'Hello {update.effective_user.first_name}')
+
+
+updater = Updater('YOUR TOKEN HERE')
+
+updater.dispatcher.add_handler(CommandHandler('hello', hello))
+
+updater.start_polling()
+updater.idle()
