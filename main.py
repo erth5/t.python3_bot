@@ -23,28 +23,25 @@ def error(update, context):
 # function to handle normal text
 def text(update, context):
     text_received = update.message.text
-    time.sleep(7.01)
-
-    print(update.message.text)
-    print(update.message.chat_id + update.update_id)
+    # time.sleep(7.01)
+    print("text=" + update.message.text)
+    print("chatID, updateID", update.message.chat_id, update.update_id)
+    print()
     print(update.message)
+    print()
     print(update.message.chat)
-
+    print()
+    print(update.message.reply_text("test"))
     update.message.reply_text(f'did you said "{text_received}" ?')
-
-
-
 
 # function to handle reply's
 def reply(update, context):
     update.message.reply_text('chicken wings')
 
 
-def one_run(req_time):
-    print("human salary")
-    print(req_time)
-    # send message without update Object
-
+def one_run(text):
+    print(text)
+    # TODO send message without update Object
 
 def main():
     TOKEN = ""
@@ -68,7 +65,7 @@ def main():
     dispatcher.add_error_handler(error)
 
     # run it first
-    one_run("1D")
+    one_run("human salary")
 
     # start your shiny new bot
     updater.start_polling()
