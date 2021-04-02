@@ -33,6 +33,8 @@ def text(update, context):
     update.message.reply_text(f'did you said "{text_received}" ?')
 
 
+
+
 # function to handle reply's
 def reply(update, context):
     update.message.reply_text('chicken wings')
@@ -48,7 +50,7 @@ def main():
     TOKEN = ""
 
     # create the updater, that will automatically create also a dispatcher and a queue to
-    # make them dialoge
+    # make them dialogue
     updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
